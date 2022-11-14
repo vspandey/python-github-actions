@@ -40,9 +40,10 @@ jobs:
         pytest
     - name: Deploy to heroku
       env:
-       HEROKU_API_TOKEN: ${{secrets.heroku_api_token}} 
-       HEROKU_APP_NAME: ${{secrets.heroku_app_name}}
+        HEROKU_API_TOKEN: ${{secrets.heroku_api_token}} 
+        HEROKU_APP_NAME: ${{secrets.heroku_app_name}}
       if: github.ref == 'refs/head/master' && job.status=='success'
-       run: |
-        git remote add heroku https://heroku:$HEROKU_API_TOKEN@git.heroku.com/safe-eyrie-66910.git
-        git push heroku HEAD:master -f
+        run:  |
+          git remote add heroku https://heroku:$HEROKU_API_TOKEN@git.heroku.com/safe-eyrie-66910.git
+          git push heroku HEAD:master -f
+          
