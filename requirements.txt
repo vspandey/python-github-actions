@@ -1,6 +1,6 @@
 attrs==22.1.0
 click==8.0.4
-dataclasses==0.8
+
 Flask==2.0.3
 importlib-metadata==4.8.3
 iniconfig==1.1.1
