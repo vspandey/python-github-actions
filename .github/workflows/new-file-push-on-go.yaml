@@ -40,6 +40,6 @@ jobs:
          cat random.txt
          
          ls -lart
-         git add -A 
-         git commit -m"${{ github.event.inputs.git_commit_message}}
+         git add .
+         git commit -m"${{ github.event.inputs.git_commit_message}}"
          git push
