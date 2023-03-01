@@ -23,3 +23,9 @@ jobs:
             "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_."
             }' \
           --fail
+
+  echo-input:
+    runs-on: ubuntu-latest
+    steps:
+      - name: show input value
+        run: echo " You are running this on cluser $${{ github.event.input.name }}"
