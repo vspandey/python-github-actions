@@ -28,4 +28,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: show input value
-        run: echo " You are running this on cluser $${{ github.event.input.name }}"
+        run: echo " You are running this on cluser ${{ github.event.input.name }}"
