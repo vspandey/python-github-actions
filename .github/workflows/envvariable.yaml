@@ -8,7 +8,7 @@ jobs:
   log-env:
     runs-on: ubuntu-latest
     env:
-      JOB_ENV: Available to all steps only to our log-env jobs
+      JOB_ENV: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Log env variables
         env:
