@@ -29,8 +29,8 @@ jobs:
          ls -lart
          git init
          git remote add origin "https://${{github.event.inputs.git_user_name}}:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
-         git config -- global user.email "botemail@bot-email.com"
-         git config -- global user.name "vivekbot"
+         git config --global user.email "botemail@bot-email.com"
+         git config --global user.name "vivekbot"
          git fetch
          git checkout master
          git branch --set-upstream-to=origin/master
