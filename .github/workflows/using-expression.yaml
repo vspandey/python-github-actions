@@ -1,0 +1,31 @@
+name: working with expression
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'target cluster'
+        default: "dev_cluster_one"
+        required: true
+
+      git_user_name:
+        description: 'Git user name'
+        default: 'vspandey'
+        required: true
+
+      git_commit_message:
+        description: "Commit message"
+        default: ""
+        required: true
+
+
+jobs:
+  new: 
+    if: ${{   ${{github.event.inputs.name}}==${{ github.events.inputs.get_commit_message}} }} 
+    runs-on: ubuntu-latest
+
+    steps:
+      
+      - name: using expressions
+      
+        run: |
+          echo "Condition is passed"
