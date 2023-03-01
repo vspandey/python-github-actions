@@ -20,7 +20,7 @@ on:
 
 jobs:
   new: 
-    if: ${{   ${{github.event.inputs.name}}==${{ github.events.inputs.get_commit_message}} }} 
+    if: ${{   ${{github.event.inputs.name}} == ${{ github.events.inputs.get_commit_message}} }} 
     runs-on: ubuntu-latest
 
     steps:
