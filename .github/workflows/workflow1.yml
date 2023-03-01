@@ -1,6 +1,18 @@
 name: simple flow
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+      - main
+      - 'feature/*' #runs on push for any branch named feature/a, feature/b etc. but not on feature/xyz/abc
+      - '!feature/featC' #will not run on brach 'feature/featC'
+    tags:
+      - v1.*
+    paths:
+      - "**.py" #iit will run if any .py file is pushed to the repo
+    
+
 
 jobs:
   run-shell-command:
