@@ -1,4 +1,4 @@
-name: using github token
+name: random file to master branch
 on:
   workflow_dispatch:
     inputs:
@@ -28,7 +28,6 @@ jobs:
          pwd
          ls -lart
          git init
-         git remote add 
          git remote add origin "https://${{github.event.inputs.git_user_name}}:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
          git config -- global user.email "botemail@bot-email.com"
          git config -- global user.name "vivekbot"
