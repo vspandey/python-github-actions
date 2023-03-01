@@ -18,8 +18,9 @@ on:
         required: true
       
       age:
+        type: choice
         description: 'Age'
-        default: "dev_cluster_one"
+        default: "1"
         options:
           - '1'
           - '2'
