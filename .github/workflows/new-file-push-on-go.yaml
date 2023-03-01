@@ -37,7 +37,8 @@ jobs:
          git pull
          ls -lart
          echo $RANDOM >> random.txt
-         echo ${{ github.event.inputs.name}} >> random.txt
+         cat random.txt
+         
          ls -lart
          git add -A 
          git commit -m"${{ github.event.inputs.git_commit_message}}
