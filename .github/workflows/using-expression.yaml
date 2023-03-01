@@ -16,6 +16,16 @@ on:
         description: "Commit message"
         default: ""
         required: true
+      
+      age:
+        description: 'Age'
+        default: "dev_cluster_one"
+        options:
+          - '1'
+          - '2'
+          - '3'
+          - '4'
+        required: true
 
 
 jobs:
