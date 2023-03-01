@@ -1,0 +1,45 @@
+name: using github token
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'target cluster'
+        default: "dev_cluster_one"
+        required: true
+
+      git_user_name:
+        description: 'Git user name'
+        default: 'vspandey'
+        required: true
+
+      git_commit_message:
+        description: "Commit message"
+        default: ""
+        required: true
+
+
+jobs:
+  new: 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: push a random file
+        run: |
+         pwd
+         ls -lart
+         git init
+         git remote add 
+         git remote add origin "https://${{github.event.inputs.git_user_name}}:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
+         git config -- global user.email "botemail@bot-email.com"
+         git config -- global user.name "vivekbot"
+         git fetch
+         git checkout master
+         git branch --set-upstream-to=origin/master
+         git pull
+         ls -lart
+         echo $RANDOM >> random.txt
+         echo ${{ github.event.inputs.name}} >> random.txt
+         ls -lart
+         git add -A 
+         git commit -m"${{ github.event.inputs.git_commit_message}}
+         git push
